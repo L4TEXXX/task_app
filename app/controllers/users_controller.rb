@@ -8,12 +8,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:title,:startday,:endtime,:allday,:memo))
+    @user = User.new(params.require(:user).permit(:title,:startdate,:enddate,:allday,:memo))
     if @user.save
-      flash[:notice] = "スケジュールを登録しました"
+      flash[:notice] = "ユーザーを新規登録しました"
       redirect_to :users
     else
-      flash[:notice] = "スケジュールを登録できませんでした"
       render "new"
     end
   end
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(params.require(:user).permit(:title,:startday,:endtime,:allday,:memo))
+    if @user.update(params.require(:user).permit(:title,:startdate,:enddate,:allday,:memo))
       flash[:notice] = "スケジュールを変更しました"
       redirect_to :users
     else

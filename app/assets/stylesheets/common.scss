@@ -38,7 +38,9 @@ body{
     width:auto
   }
   
-
+  .main_container{
+    margin:50px 15px
+  }
   
   table{
     border-collapse:collapse;
@@ -67,7 +69,7 @@ body{
     background-color:#98ecaa7a;border:2px solid #5cd075
   }
   
-  .alert__failure{
+  .alert__delete,.alert__failure{
      background-color:#ec98ac8f;border:2px solid #ec7592
   }
   
